@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="cnamgs-logo.png" alt="CNAMGS Logo" />
+        <h1>MOUKELA STOP</h1>
+      </div>
+      <div class="menu-icon">☰</div>
+    </header>
+
+    <div class="main-content">
+      <div class="appointment-box">
+        <h2>Prenez un rendez-vous depuis votre maison en un seul clic.</h2>
+        <button class="appointment-button" onclick="showAppointmentForm()">
+          Prendre un rendez-vous
+        </button>
+      </div>
+
+      <div class="news-grid">
+        <div class="news-item">
+          <img
+            src="news-image-1.jpg"
+            alt="Groupe de personnes en réunion"
+            width="250"
+            height="150"
+          />
+          <h3>23 Février 2024</h3>
+          <p>Réunion importante à la CNAMGS</p>
+          <a href="https://cnamgs-rendezvous.ga/actualites/reunion-23-fevrier"
+            >Lire plus ></a
+          >
+        </div>
+        <div class="news-item">
+          <img
+            src="news-image-2.jpg"
+            alt="Personnes dans une pharmacie"
+            width="250"
+            height="150"
+          />
+          <h3>20 Février 2024</h3>
+          <p>Nouvelle convention avec les pharmacies</p>
+          <a
+            href="https://cnamgs-rendezvous.ga/actualites/convention-pharmacies"
+            >Lire plus ></a
+          >
+        </div>
+      </div>
+
+      <div class="directors">
+        <div class="director">
+          <img src="dg-entrant.jpg" alt="Photo du DG entrant" />
+          <p>DG entrant</p>
+        </div>
+        <div class="director">
+          <img src="dg-sortant.jpg" alt="Photo du DG sortant" />
+          <p>DG sortant</p>
+        </div>
+        <div class="director">
+          <img src="sg-entrant.jpg" alt="Photo du SG entrant" />
+          <p>SG entrant</p>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="social-icons">
+        <a href="https://facebook.com/cnamgs">f</a>
+        <a href="https://linkedin.com/company/cnamgs">in</a>
+        <a href="https://youtube.com/cnamgs">▶</a>
+        <a href="mailto:contact@cnamgs.ga">✉</a>
+      </div>
+    </footer>
+
+    <script>
+      function showAppointmentForm() {
+        // Création du formulaire
+        var form = document.createElement("form");
+        form.innerHTML = `
+        <h2>Formulaire de rendez-vous</h2>
+        <label for="nom">Nom :</label>
+        <input type="text" id="nom" name="nom" required><br><br>
+        <label for="prenom">Prénom :</label>
+        <input type="text" id="prenom" name="prenom" required><br><br>
+        <label for="email">Email :</label>
+        <input type="email" id="email" name="email" required><br><br>
+        <label for="telephone">Téléphone :</label>
+        <input type="tel" id="telephone" name="telephone" required><br><br>
+        <label for="date">Date souhaitée :</label>
+        <input type="date" id="date" name="date" required><br><br>
+        <label for="motif">Motif du rendez-vous :</label>
+        <textarea id="motif" name="motif" required></textarea><br><br>
+        <button type="submit">Confirmer le rendez-vous</button>
+      `;
+
+        form.onsubmit = function (e) {
+          e.preventDefault();
+          alert(
+            "Votre rendez-vous a été enregistré. Vous recevrez bientôt un email de confirmation avec un PDF détaillant votre rendez-vous."
+          );
+          // Ici, vous ajouteriez la logique pour envoyer les données au serveur,
+          // générer le PDF et envoyer l'email de confirmation.
+        };
+
+        // Affichage du formulaire
+        document.querySelector(".appointment-box").innerHTML = "";
+        document.querySelector(".appointment-box").appendChild(form);
+      }
+    </script>
+  </body>
+</html>
