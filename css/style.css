@@ -12,8 +12,11 @@ html {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("background.jpg") no-repeat center center fixed;
+  background-image: linear-gradient(
+      rgba(0, 0, 255, 0.5),
+      rgba(255, 255, 0, 0.5)
+    ),
+    url("./images/file-banque.png");
   background-size: cover;
 }
 .header_index {
@@ -77,11 +80,15 @@ footer {
 /*css de la page d'accueil */
 
 header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10%;
   background-color: #003399;
   color: white;
   padding: 10px;
   display: flex;
-  justify-content: space-between;
+  justify-content: srgb(39, 41, 47) tween;
   align-items: center;
 }
 .logo {
